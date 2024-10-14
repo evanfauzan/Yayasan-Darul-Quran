@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Galeri - Yayasan Darul Qur'an</title>
+  </head>
+  <body>
+    <header>
+      <h1>Yayasan Darul Qur'an</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="programs.html">Program Pendidikan</a></li>
+          <li><a href="registration.html">Pendaftaran</a></li>
+          <li><a href="activities.html">Kegiatan</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li><a href="news.html">Berita</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Galeri Foto dan Video</h2>
+
+      <div class="size-buttons">
+        <button onclick="changeSize('small')">Kecil</button>
+        <button onclick="changeSize('medium')">Sedang</button>
+      </div>
+
+      <div class="gallery">
+        <script>
+          for (let i = 1; i <= 83; i++) {
+            document.write(
+              `<img src="images/${i}.jpg" alt="Kegiatan ${i}" class="gallery-item medium" onclick="openPopup('images/${i}.jpg')" />`
+            );
+          }
+        </script>
+      </div>
+
+      <div id="popup" class="popup" onclick="closePopup()">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <img class="popup-content" id="popupImage" />
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Yayasan Darul Qur'an. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+      function changeSize(size) {
+        const items = document.querySelectorAll(".gallery-item");
+        items.forEach((item) => {
+          item.className = "gallery-item " + size;
+        });
+      }
+
+      function openPopup(imageSrc) {
+        const popup = document.getElementById("popup");
+        const popupImage = document.getElementById("popupImage");
+        popup.style.display = "block";
+        popupImage.src = imageSrc;
+      }
+
+      function closePopup() {
+        const popup = document.getElementById("popup");
+        popup.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
