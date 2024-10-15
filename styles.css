@@ -7,47 +7,176 @@ body {
     font-family: 'Open Sans', sans-serif; /* Mengubah font menjadi Open Sans untuk tampilan yang lebih modern dan sesuai */
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-image: url(background.png);
     transition: background-color 0.3s ease;
     overflow-x: hidden;
 }
 
 header {
     background: linear-gradient(135deg, #4CAF50, #81C784);
-    color: white;
-    padding: 20px 0;
-    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    overflow: hidden;
+    z-index: 1000;
+    animation: slideDown 0.5s ease;
 }
 
 header h1 {
+    color: white;
+    text-align: center;
     font-size: 2.5em;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
+    position: relative;
 }
 
-nav a {
+nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    border-radius: 5px;
 }
 
-nav a:hover,
-nav ul li.active a {
-    color: #ffeb3b;
-    text-shadow: 0 0 5px #ffeb3b;
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li.active a {
+    background: rgba(255, 255, 255, 0.3);
+    color: #333;
+    border: 1px solid white;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s, left 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    nav ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        animation: fadeInMenu 0.3s ease forwards; /* Add animation */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav ul li a {
+        font-size: 1em;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 6px 8px;
+    }
 }
 
 .slider {
@@ -319,42 +448,49 @@ form button:hover {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
-    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #e9f7ef, #d2f8d2);
     border-radius: 10px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
     animation: fadeIn 1s ease-in-out;
 }
 
 .about-section h2 {
     text-align: center;
-    color: #007BFF;
+    color: #4CAF50; /* Hijau tua */
     margin-bottom: 30px;
     font-size: 2.5em;
     animation: slideIn 0.5s ease forwards;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .about-section h3 {
     color: #333;
     margin-top: 25px;
     font-size: 1.8em;
-    border-bottom: 2px solid #007BFF;
+    border-bottom: 3px solid #4CAF50; /* Hijau tua */
     padding-bottom: 10px;
     animation: slideIn 0.5s ease forwards;
 }
 
 .about-section p {
     line-height: 1.7;
-    color: #555;
+    color: #555; /* Abu-abu gelap */
     margin: 15px 0;
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s;
     opacity: 0;
     animation: fadeInText 0.5s ease forwards;
+    padding: 15px 10px;
+    border-left: 4px solid #4CAF50; /* Hijau tua */
 }
 
 .about-section p:hover {
     transform: translateY(-2px);
+    color: #388E3C; /* Hijau lebih gelap */
+    background-color: rgba(76, 175, 80, 0.1); /* Hijau muda transparan */
 }
 
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -387,7 +523,7 @@ form button:hover {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .about-section {
-        padding: 20px;
+        padding: 30px;
     }
 
     .about-section h2 {
@@ -395,24 +531,37 @@ form button:hover {
     }
 
     .about-section h3 {
-        font-size: 1.5em;
+        font-size: 1.6em;
+    }
+
+    .about-section p {
+        font-size: 1em;
     }
 }
 
 @media (max-width: 480px) {
+    .about-section {
+        padding: 20px;
+    }
+
     .about-section h2 {
         font-size: 1.5em;
     }
 
     .about-section h3 {
-        font-size: 1.3em;
+        font-size: 1.4em;
+    }
+
+    .about-section p {
+        font-size: 0.9em;
     }
 }
+
 .program-section {
     max-width: 1200px;
     margin: 40px auto;
     padding: 40px;
-    background-color: #ffffff;
+    background: linear-gradient(to bottom right, #e9f7ef, #d2f8d2);
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1s ease-in-out;
@@ -420,7 +569,7 @@ form button:hover {
 
 .program-section h2 {
     text-align: center;
-    color: #007BFF;
+    color: green;
     margin-bottom: 30px;
     font-size: 2.5em;
     text-transform: uppercase;
@@ -611,4 +760,168 @@ form button:hover {
     .photo-show {
         height: 70vh; /* Mengurangi tinggi pada layar kecil */
     }
+}
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    animation: fadeIn 1s;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    animation: slideInDown 1s;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    animation: fadeIn 1s;
+}
+
+.form-contact input, .form-contact textarea {
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-contact input:focus, .form-contact textarea:focus {
+    border-color: #56ab2f;
+    box-shadow: 0 0 10px #56ab2f;
+    animation: pulse 0.5s;
+}
+
+.form-contact button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 1em;
+    animation: fadeIn 1s;
+}
+
+.form-contact button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+.map {
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: fadeIn 1s;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 1s;
+}
+
+.social-media img {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+.testimonial {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f1f1f1;
+    border-radius: 12px;
+    animation: fadeIn 1s;
+}
+
+.faq {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 12px;
+    animation: fadeIn 1s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq h2 {
+    color: #3b763d; /* Warna hijau yang lebih gelap */
+    font-size: 1.8em; /* Ukuran font lebih besar */
+    animation: slideInDown 1s;
+}
+
+.faq-item {
+    margin: 10px 0;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.2em; /* Ukuran font pertanyaan */
+    color: #333; /* Warna teks pertanyaan */
+    transition: color 0.3s, transform 0.3s;
+}
+
+.faq-question:hover {
+    color: #56ab2f; /* Warna saat hover */
+    transform: scale(1.05);
+}
+
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-size: 1em; /* Ukuran font jawaban */
+    color: #555; /* Warna teks jawaban */
+}
+
+.faq-answer.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+    0%, 100% { border-color: #ddd; }
+    50% { border-color: #56ab2f; }
 }

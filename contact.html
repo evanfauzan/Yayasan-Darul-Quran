@@ -4,13 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
     <title>Kontak - Yayasan Darul Qur'an</title>
   </head>
   <body>
     <header>
       <h1>Yayasan Darul Qur'an</h1>
       <nav>
-        <ul>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">Tentang Kami</a></li>
           <li><a href="programs.html">Program Pendidikan</a></li>
@@ -18,20 +28,182 @@
           <li><a href="activities.html">Kegiatan</a></li>
           <li><a href="gallery.html">Galeri</a></li>
           <li><a href="news.html">Berita</a></li>
-          <li><a href="contact.html">Kontak</a></li>
+          <li class="active"><a href="contact.html">Kontak</a></li>
         </ul>
       </nav>
     </header>
+    <div class="container">
+      <div class="contact-info">
+        <h2 class="contact-title">Kontak Kami</h2>
+        <p class="contact-phone">
+          <strong>No. Kontak:</strong>
+          <a href="https://wa.me/+6281325123377" target="_blank"
+            >+62 813-2512-3377</a
+          >
+        </p>
+        <p class="contact-address">
+          <strong>Alamat:</strong> Yayasan Pesantren Darul Quran,Blok B, Sumber
+          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
+          Selatan 30672
+        </p>
+      </div>
 
-    <main>
-      <h2>Kontak Kami</h2>
-      <p>Alamat: Jl. Contoh No. 123, Kota XYZ</p>
-      <p>Email: info@darulquran.or.id</p>
-      <p>Telepon: 123-456-789</p>
-    </main>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15928.30793223565!2d105.0748385!3d-3.5697624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3c017f82ad1343%3A0xe63ada6f35d9e9b4!2sYayasan%20Darul%20Qur&#39;an%20Sumber%20Hidup!5e0!3m2!1sid!2sid!4v1728961261461!5m2!1sid!2sid"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
 
-    <footer>
-      <p>&copy; 2024 Yayasan Darul Qur'an. All Rights Reserved.</p>
-    </footer>
+      <form
+        class="form-contact"
+        action="https://formsubmit.co/evanfauzansamiswara@gmail.com"
+        method="POST"
+      >
+        <h2 class="form-title">Kirim Pesan</h2>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nama"
+          class="input-name"
+          required
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          class="input-email"
+          required
+        />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="Nomor Telepon"
+          class="input-phone"
+          required
+        />
+        <textarea
+          name="message"
+          placeholder="Pesan"
+          class="input-message"
+          required
+        ></textarea>
+        <button type="submit" class="submit-button">Kirim Pesan</button>
+      </form>
+
+      <div class="faq">
+        <h2 class="faq-title">FAQ</h2>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Apa saja program yang ditawarkan?
+          </div>
+          <div class="faq-answer">
+            Kami menawarkan berbagai program pendidikan, pelatihan, dan kegiatan
+            sosial.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Bagaimana cara mendaftar?
+          </div>
+          <div class="faq-answer">
+            Anda dapat mendaftar secara online melalui website kami atau
+            langsung datang ke lokasi.
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Apa saja Syarat Pendaftarannya?
+          </div>
+          <div class="faq-answer">
+            - Kartu Keluarga (KK) <br />
+            - surat Keterangan Lulus (SKL) <br />
+            - Akta Kelahiran<br />
+            - Raport 2 semester terahir
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Bagaimana Alur Pendaftaranya?
+          </div>
+          <div class="faq-answer">
+            - Datang ke stand PPDB Madrasah Darun Najaa <br />
+            - Mengisi formulir pendaftaran <br />
+            - Menyerahkan syarat pendaftaran - Raport 2 semester terahir <br />
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Apa saja Sarana & Prasarana Yang didapat?
+          </div>
+          <div class="faq-answer">
+            - Gedung Dan Ruang Belajar yang Refresentatif <br />
+            - Asrama Pondok "Darul Quran" <br />
+            - Masjid Podok Pesantren <br />
+            - Lab Komputer
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Apa saja Program Untuk Santri?
+          </div>
+          <div class="faq-answer">
+            - Khitobah <br />
+            - Tahfiz Qur'an <br />
+            - Maulidur Rosul <br />
+            - Kajian Kitab Kuning <br />
+            - Mengaji Al-Qur'an
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            Apa saja Fasilitasnya?
+          </div>
+          <div class="faq-answer">
+            - Asrama Pesantren <br />
+            - Gedung milik sendiri <br />
+            - Sarana Belajar yang memadai <br />
+            - Tempat ibadah <br />
+            - Sarana Olahraga <br />
+            - LAB Komputer <br />
+            - Balai Latihan Kerja (BLK) <br />
+            - Kamar Mandi
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-media">
+      <h2 class="social-title">Media Sosial Kami</h2>
+      <a href="https://facebook.com" target="_blank"
+        ><img src="facebook.png" alt="Facebook" class="social-icon"
+      /></a>
+      <a href="https://instagram.com" target="_blank"
+        ><img src="instagram.png" alt="Instagram" class="social-icon"
+      /></a>
+    </div>
+
+    <script>
+      function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        if (answer.classList.contains("show")) {
+          answer.classList.remove("show");
+          setTimeout(() => {
+            answer.style.display = "none";
+          }, 500); // Menunggu transisi selesai sebelum menyembunyikan
+        } else {
+          answer.style.display = "block";
+          setTimeout(() => {
+            answer.classList.add("show");
+          }, 10); // Memberi sedikit waktu sebelum menambahkan kelas
+        }
+      }
+    </script>
+
+    <script src="script.js"></script>
   </body>
 </html>
