@@ -271,7 +271,7 @@ main {
 
 .mission-description, .programs-description2, .activities-description, .cta-description {
     margin-bottom: 20px;
-    color: #4a4a4a; /* Dark gray */
+    color: #3a3a3a; /* Dark gray */
 }
 
 .programs-list2, .activities-list {
@@ -541,7 +541,13 @@ form button:hover {
     overflow: hidden; /* Prevent overflow */
     border-radius: 8px;
     width: 100%;
-    height: 200px; /* Fixed height to ensure uniformity */
+    height: 8rem; /* Fixed height to ensure uniformity */
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        height: 200px; /* Fixed height to ensure uniformity */
+    }
 }
 
 .gallery-item img {
@@ -803,44 +809,41 @@ form button:hover {
 .news-item {
     background: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    animation: fadeIn 0.5s ease-in-out;
+    border-radius: 10px; /* Membuat sudut lebih halus */
+    padding: 20px; /* Meningkatkan padding untuk kenyamanan */
+    margin: 20px; /* Mengurangi margin agar lebih kompak */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Bayangan lebih halus */
+    transition: transform 0.3s, box-shadow 0.3s; /* Memperhalus transisi */
+    animation: fadeIn 0.6s ease-in-out; /* Menambahkan sedikit durasi animasi */
     max-width: 1500px;
 }
 
 .news-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Bayangan lebih dalam saat hover */
 }
 
 .news-item img {
     max-width: 100%;
-    border-radius: 5px;
+    border-radius: 10px; /* Membuat sudut gambar lebih halus */
     transition: transform 0.3s;
 }
 
-.news-item img:hover {
-    transform: scale(1.05);
-}
 
 .judul {
     text-align: center;
-    font-size: 2.5em;
-    color: #333;
-    margin: 20px 0;
-    animation: fadeIn 0.5s ease-in-out;
+    font-size: 3em; /* Menambah ukuran font */
+    color: #4caf50; /* Mengganti warna judul agar lebih menarik */
+    margin: 30px 0; /* Mengatur margin untuk keseimbangan */
+    animation: fadeIn 0.7s ease-in-out; /* Durasi animasi lebih panjang */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan pada teks */
 }
-
 
 /* Animation */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px); /* Meningkatkan efek gerakan saat muncul */
     }
     to {
         opacity: 1;
@@ -854,12 +857,12 @@ form button:hover {
         display: block;
         margin: 5px 0;
     }
-    .news-item
-    {
-        margin-left: 30px;
-        margin-right: 30px;
+    .news-item {
+        margin-left: 10px; /* Mengurangi margin pada perangkat kecil */
+        margin-right: 10px; /* Mengurangi margin pada perangkat kecil */
     }
 }
+
 
 .photo-show {
     position: relative;
@@ -1158,4 +1161,260 @@ form button:hover {
 .profile-caption:hover {
     color: #4CAF50; /* Ubah warna teks saat di-hover */
     transform: scale(1.1); /* Efek zoom saat hover */
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.registration-section {
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    margin-bottom: 20px;
+}
+
+.registration-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.step {
+    margin: 10px 0;
+    animation: slideIn 0.5s forwards;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-title {
+    margin-bottom: 10px;
+}
+
+.footer-description,
+.footer-text {
+    margin: 5px 0;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    width: 30px;
+    margin: 0 5px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .daftar-navigasi li {
+        display: block;
+        margin: 5px 0;
+    }
+}
+/* Tambahkan gaya ini untuk membuat tampilan lebih modern dan responsif */
+.main-content2 {
+    padding: 20px;
+    max-width: 90%;
+    margin: auto;
+}
+
+.registration-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.registration-steps {
+    list-style-type: none;
+    padding: 0;
+}
+
+.step {
+    background: #e0f7fa;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.step:hover {
+    transform: scale(1.02);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+.kegiatan-utama {
+    padding: 20px;
+    text-align: center;
+}
+
+.judul-kegiatan {
+    font-size: 2.5em;
+    color: #4caf50;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.wadah-kegiatan {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -15px;
+}
+
+.item-kegiatan {
+    width: calc(33.33% - 30px);
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s;
+}
+
+.item-kegiatan:hover {
+    transform: scale(1.05);
+}
+
+.gambar-kegiatan {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: filter 0.5s;
+}
+
+.item-kegiatan:hover .gambar-kegiatan {
+    filter: blur(2px); /* Kurangi efek blur saat hover */
+}
+
+.judul-popup {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: opacity 0.5s;
+}
+
+.keterangan {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.item-kegiatan:hover .keterangan {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, 0); /* Muncul dari bawah */
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+    .item-kegiatan {
+        width: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 600px) {
+    .item-kegiatan {
+        width: 100%;
+    }
+    .judul-kegiatan {
+        font-size: 2em;
+    }
 }

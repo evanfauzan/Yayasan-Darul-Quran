@@ -23,14 +23,15 @@ function nextSlide() {
 
 // Set interval for automatic photo show
 setInterval(nextSlide, 3000);
-function validateForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
 
-    if (!name || !email || !message) {
-        alert("Semua field harus diisi!");
-        return false; // Mencegah pengiriman form
-    }
-    return true; // Mengizinkan pengiriman form
-}
+// Tambahkan animasi tombol saat diklik
+document.addEventListener("DOMContentLoaded", function() {
+    const button = document.querySelector('.cta-button');
+    button.addEventListener('click', function() {
+        button.classList.add('clicked');
+        setTimeout(() => {
+            button.classList.remove('clicked');
+        }, 300);
+    });
+});
+

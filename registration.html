@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <title>Pendaftaran - Yayasan Darul Qur'an</title>
   </head>
   <body>
-    <header>
-      <h1>Yayasan Darul Qur'an</h1>
-      <nav>
+    <header class="header">
+      <h1 class="judul-header">Yayasan Darul Qur'an</h1>
+      <nav class="navigasi">
         <div class="menu-toggle" id="mobile-menu">
           <span class="bar"></span>
           <span class="bar"></span>
           <span class="bar"></span>
         </div>
-        <ul class="nav-list">
+        <ul class="daftar-navigasi">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">Tentang Kami</a></li>
           <li><a href="programs.html">Program Pendidikan</a></li>
@@ -28,29 +29,31 @@
       </nav>
     </header>
 
-    <main>
-      <h2>Pendaftaran Santri Baru</h2>
-      <form action="#" method="post">
-        <label for="name">Nama Lengkap:</label>
-        <input type="text" id="name" name="name" required />
+    <div class="main-content2">
+      <section class="registration-section">
+        <h2 class="section-title">Pendaftaran Online</h2>
+        <p class="section-description">
+          Bergabunglah dengan kami di Yayasan Darul Qur'an dengan mengisi
+          formulir pendaftaran di bawah ini.
+        </p>
+        <ol class="registration-steps">
+          <li class="step">Langkah 1: Siapkan Dokumen yang Diperlukan.</li>
+          <li class="step">
+            Langkah 2: Klik tombol di bawah untuk mulai mendaftar.
+          </li>
+          <li class="step">Langkah 3: Isi semua informasi yang diperlukan.</li>
+          <li class="step">Langkah 4: Unggah dokumen yang diperlukan.</li>
+          <li class="step">Langkah 5: Kirim formulir pendaftaran.</li>
+        </ol>
+        <a
+          href="https://forms.gle/UefiRJ69poQmJVHs5"
+          target="_blank"
+          class="cta-button"
+          >Daftar Sekarang</a
+        >
+      </section>
+    </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="program">Program Pendidikan:</label>
-        <select id="program" name="program">
-          <option value="tk">Taman Kanak-Kanak</option>
-          <option value="mi">Madrasa Ibtidaiyah</option>
-          <option value="mts">Madrasa Tsanawiyah</option>
-          <option value="ma">Madrasa Aliyah</option>
-        </select>
-
-        <button type="submit">Daftar</button>
-      </form>
-    </main>
-
-
-    <br>
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-info">
@@ -70,10 +73,8 @@
           </p>
           <p class="footer-text"><strong>Telepon:</strong> +62 813-2512-3377</p>
           <p class="footer-text">
-            <strong>Alamat:</strong> Blok B, Sumber
-          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
-          Selatan 30672
-        </p>
+            <strong>Alamat:</strong> Blok B, Sumber Hidup, Kec. Pedamaran Tim.,
+            Kabupaten Ogan Komering Ilir, Sumatera Selatan 30672
           </p>
         </div>
         <div class="footer-social">
