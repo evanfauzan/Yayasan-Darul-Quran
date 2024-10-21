@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <title>Berita - Yayasan Darul Qur'an</title>
+  </head>
+  <body>
+    <header>
+      <h1>Yayasan Darul Qur'an</h1>
+      <nav>
+        <div class="menu-toggle" id="mobile-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">Tentang Kami</a></li>
+          <li><a href="programs.html">Program Pendidikan</a></li>
+          <li><a href="registration.html">Pendaftaran</a></li>
+          <li><a href="activities.html">Kegiatan</a></li>
+          <li><a href="gallery.html">Galeri</a></li>
+          <li class="active"><a href="news.html">Berita</a></li>
+          <li><a href="contact.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br />
+    <div class="new" align="center">
+      <div class="back"><h2 class="judul2">Berita Terbaru</h2></div>
+
+      <div class="news-item">
+        <img src="berita/pengurus.jpg" alt="Pelantikan Pengurus" />
+        <h3>Pelantikan Pengurus Yayasan Darul Qur'an</h3>
+        <p>Tanggal: 25 September 2024</p>
+        <p>
+          Pada tanggal 25 September 2024, Yayasan Pesantren Darul Qur'an
+          mengadakan pelantikan pengurus baru. Kegiatan ini bertujuan untuk
+          mengukuhkan posisi pengurus yang baru dan meningkatkan semangat serta
+          kerja sama dalam mengembangkan yayasan.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <img src="berita/mtq.jpg" alt="Kegiatan MTQ" />
+        <h3>
+          Keterlibatan dalam Lomba MTQ Tingkat kabupaten Ogan Komering Ilir
+        </h3>
+        <p>Tanggal: 26 Februari 2024</p>
+        <p>
+          Yayasan Pesantren Darul Qur'an berpartisipasi dalam lomba MTQ Tingkat
+          Ogan Komering Ilir. Kegiatan ini bertujuan untuk meningkatkan
+          kemampuan siswa dalam menghafal dan memahami Al-Qur'an serta untuk
+          meningkatkan rasa berlomba-lomba dalam kebaikan.
+        </p>
+      </div>
+      <div class="news-item">
+        <img src="berita/ziarah.jpg" alt="Kegiatan Ziarah" />
+        <h3>Kegiatan Ziarah Tahun 2023</h3>
+        <p>Tanggal: 29 Oktober 2023</p>
+        <p>
+          Yayasan Pesantren Darul Qur'an mengadakan kegiatan ziarah pada tanggal
+          29 Oktober 2023. Kegiatan ini bertujuan untuk meningkatkan kesadaran
+          dan keimanan siswa terhadap agama Islam serta untuk mempereratkan
+          silaturahmi antar siswa dan guru.
+        </p>
+      </div>
+    </div>
+
+    <br>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-info">
+          <h3 class="footer-title">Tentang Kami</h3>
+          <p class="footer-description">
+            Yayasan Darul Qur'an berkomitmen untuk menyediakan pendidikan
+            berkualitas dengan pendekatan yang mendalam terhadap ajaran
+            Al-Qur'an. Bergabunglah bersama kami untuk membangun masa depan yang
+            cerah.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h3 class="footer-title">Kontak Kami</h3>
+          <p class="footer-text">
+            <strong>Email:</strong>
+            <a href="mailto:info@darulquran.or.id">info@darulquran.or.id</a>
+          </p>
+          <p class="footer-text"><strong>Telepon:</strong> +62 813-2512-3377</p>
+          <p class="footer-text">
+            <strong>Alamat:</strong> Blok B, Sumber
+          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
+          Selatan 30672
+        </p>
+          </p>
+        </div>
+        <div class="footer-social">
+          <h3 class="footer-title">Ikuti Kami</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><img src="facebook.png" alt="Facebook" class="social-icon"
+            /></a>
+            <a href="https://instagram.com" target="_blank"
+              ><img src="instagram.png" alt="Instagram" class="social-icon"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer-rights">
+        &copy; 2024 Yayasan Darul Qur'an. Semua Hak Dilindungi.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

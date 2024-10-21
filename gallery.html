@@ -4,8 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <title>Galeri - Yayasan Darul Qur'an</title>
+    <style>
+      .gallery-item {
+        width: 100%;
+        height: 200px; /* Set a fixed height for the images */
+        object-fit: cover; /* Ensures images cover the area without distortion */
+        border-radius: 5px; /* Optional: for rounded corners */
+      }
+
+      /* Custom styles for the modal */
+      .modal-lg {
+        max-width: 80%; /* Increase the modal size */
+      }
+
+      .modal-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-content {
+        transition: transform 0.3s ease; /* Smooth transition */
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -29,32 +56,53 @@
       </nav>
     </header>
 
-    <main>
-      <div class="back"><h2 class="judul2">Galeri</h2></div>
+    <main class="container my-4">
+      <div class="back">
+        <h2 class="judul2">Galeri</h2>
+      </div>
 
-      <!-- <div class="size-buttons">
-        <button onclick="changeSize('small')">Kecil</button>
-        <button onclick="changeSize('medium')">Sedang</button>
-      </div> -->
-
-      <div class="gallery">
+      <div class="row">
         <script>
           for (let i = 102; i >= 1; i--) {
             document.write(
-              `<img src="images/${i}.jpg" alt="Kegiatan ${i}" class="gallery-item medium" onclick="openPopup('images/${i}.jpg')" />`
+              `<div class="col-md-4 mb-4">
+                            <img src="images/${i}.jpg" alt="Kegiatan ${i}" class="gallery-item img-fluid" onclick="openPopup('images/${i}.jpg')" />
+                        </div>`
             );
           }
         </script>
       </div>
 
-      <div id="popup" class="popup" onclick="closePopup()">
-        <span class="close" onclick="closePopup()">&times;</span>
-        <img class="popup-content" id="popupImage" />
+      <!-- Bootstrap Modal -->
+      <div
+        class="modal fade"
+        id="imageModal"
+        tabindex="-1"
+        aria-labelledby="imageModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="imageModalLabel">Gambar</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span>&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <img class="img-fluid" id="modalImage" />
+            </div>
+          </div>
+        </div>
       </div>
     </main>
 
-
-    <br>
+    <br />
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-info">
@@ -74,10 +122,8 @@
           </p>
           <p class="footer-text"><strong>Telepon:</strong> +62 813-2512-3377</p>
           <p class="footer-text">
-            <strong>Alamat:</strong> Blok B, Sumber
-          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
-          Selatan 30672
-        </p>
+            <strong>Alamat:</strong> Blok B, Sumber Hidup, Kec. Pedamaran Tim.,
+            Kabupaten Ogan Komering Ilir, Sumatera Selatan 30672
           </p>
         </div>
         <div class="footer-social">
@@ -97,25 +143,15 @@
       </p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
     <script>
-      function changeSize(size) {
-        const items = document.querySelectorAll(".gallery-item");
-        items.forEach((item) => {
-          item.className = "gallery-item " + size;
-        });
-      }
-
       function openPopup(imageSrc) {
-        const popup = document.getElementById("popup");
-        const popupImage = document.getElementById("popupImage");
-        popup.style.display = "block";
-        popupImage.src = imageSrc;
-      }
-
-      function closePopup() {
-        const popup = document.getElementById("popup");
-        popup.style.display = "none";
+        const modalImage = document.getElementById("modalImage");
+        modalImage.src = imageSrc;
+        $("#imageModal").modal("show");
       }
     </script>
   </body>

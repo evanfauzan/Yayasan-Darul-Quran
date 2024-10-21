@@ -4,12 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
     <title>Kontak - Yayasan Darul Qur'an</title>
   </head>
   <body>
@@ -33,7 +36,8 @@
         </ul>
       </nav>
     </header>
-    <div class="container">
+
+    <div class="container mt-5">
       <div class="contact-info">
         <h2 class="contact-title">Kontak Kami</h2>
         <p class="contact-phone">
@@ -43,15 +47,15 @@
           >
         </p>
         <p class="contact-address">
-          <strong>Alamat:</strong> Yayasan Pesantren Darul Quran,Blok B, Sumber
+          <strong>Alamat:</strong> Yayasan Pesantren Darul Quran, Blok B, Sumber
           Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
           Selatan 30672
         </p>
       </div>
 
-      <div class="map">
+      <div class="map mb-4">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15928.30793223565!2d105.0748385!3d-3.5697624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3c017f82ad1343%3A0xe63ada6f35d9e9b4!2sYayasan%20Darul%20Qur&#39;an%20Sumber%20Hidup!5e0!3m2!1sid!2sid!4v1728961261461!5m2!1sid!2sid"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15928.30793223565!2d105.0748385!3d-3.5697624!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3c017f82ad1343%3A0xe63ada6f35d9e9b4!2sYayasan%20Darul%20Qur'an%20Sumber%20Hidup!5e0!3m2!1sid!2sid!4v1728961261461!5m2!1sid!2sid"
           width="100%"
           height="400"
           style="border: 0"
@@ -61,39 +65,52 @@
       </div>
 
       <form
-        class="form-contact"
+        class="form-contact mb-5"
         action="https://formsubmit.co/evanfauzansamiswara@gmail.com"
         method="POST"
       >
-        <h2 class="form-title">Kirim Pesan</h2>
-        <input
-          type="text"
-          name="name"
-          placeholder="Nama"
-          class="input-name"
-          required
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          class="input-email"
-          required
-        />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Nomor Telepon"
-          class="input-phone"
-          required
-        />
-        <textarea
-          name="message"
-          placeholder="Pesan"
-          class="input-message"
-          required
-        ></textarea>
-        <button type="submit" class="submit-button">Kirim Pesan</button>
+        <h2 class="form-title text-center mb-4">Kirim Pesan</h2>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input
+              type="text"
+              name="name"
+              placeholder="Nama"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="form-group col-md-6">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Nomor Telepon"
+            class="form-control"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <textarea
+            name="message"
+            placeholder="Pesan"
+            class="form-control"
+            rows="5"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Kirim Pesan
+        </button>
       </form>
 
       <div class="faq">
@@ -182,8 +199,7 @@
       </div>
     </div>
 
-
-    <br>
+    <br />
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-info">
@@ -203,10 +219,8 @@
           </p>
           <p class="footer-text"><strong>Telepon:</strong> +62 813-2512-3377</p>
           <p class="footer-text">
-            <strong>Alamat:</strong> Blok B, Sumber
-          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
-          Selatan 30672
-        </p>
+            <strong>Alamat:</strong> Blok B, Sumber Hidup, Kec. Pedamaran Tim.,
+            Kabupaten Ogan Komering Ilir, Sumatera Selatan 30672
           </p>
         </div>
         <div class="footer-social">
@@ -244,5 +258,8 @@
     </script>
 
     <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

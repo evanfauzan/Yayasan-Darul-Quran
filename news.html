@@ -3,9 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon" />
     <title>Berita - Yayasan Darul Qur'an</title>
+    <style>
+      .fade-in {
+        animation: fadeIn 1s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hover-effect {
+        transition: transform 0.3s;
+      }
+      .hover-effect:hover {
+        transform: scale(1.05);
+      }
+      .card {
+        height: 100%; /* Make cards equal height */
+      }
+      .card img {
+        height: 200px; /* Set a fixed height for images */
+        object-fit: cover; /* Maintain aspect ratio */
+      }
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Space out the content */
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -29,48 +66,93 @@
       </nav>
     </header>
     <br />
-    <div class="new" align="center">
-      <div class="back"><h2 class="judul2">Berita Terbaru</h2></div>
+    <div class="container my-5">
+      <h2 class="text-center mb-4">Berita Terbaru</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card hover-effect fade-in">
+            <img
+              src="berita/pengurus.jpg"
+              class="card-img-top"
+              alt="Pelantikan Pengurus"
+            />
+            <div class="card-body">
+              <h3 class="card-title">
+                Pelantikan Pengurus Yayasan Darul Qur'an
+              </h3>
+              <p class="text-muted">Tanggal: 25 September 2024</p>
+              <p class="card-text">
+                Pada tanggal 25 September 2024, Yayasan Pesantren Darul Qur'an
+                mengadakan pelantikan pengurus baru. Kegiatan ini bertujuan
+                untuk mengukuhkan posisi pengurus yang baru dan meningkatkan
+                semangat serta kerja sama dalam mengembangkan yayasan.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="news-item">
-        <img src="berita/pengurus.jpg" alt="Pelantikan Pengurus" />
-        <h3>Pelantikan Pengurus Yayasan Darul Qur'an</h3>
-        <p>Tanggal: 25 September 2024</p>
-        <p>
-          Pada tanggal 25 September 2024, Yayasan Pesantren Darul Qur'an
-          mengadakan pelantikan pengurus baru. Kegiatan ini bertujuan untuk
-          mengukuhkan posisi pengurus yang baru dan meningkatkan semangat serta
-          kerja sama dalam mengembangkan yayasan.
-        </p>
-      </div>
+        <div class="col-md-4 mb-4">
+          <div class="card hover-effect fade-in">
+            <img src="berita/mtq.jpg" class="card-img-top" alt="Kegiatan MTQ" />
+            <div class="card-body">
+              <h3 class="card-title">
+                Keterlibatan dalam Lomba MTQ Tingkat Kabupaten Ogan Komering
+                Ilir
+              </h3>
+              <p class="text-muted">Tanggal: 26 Februari 2024</p>
+              <p class="card-text">
+                Yayasan Pesantren Darul Qur'an berpartisipasi dalam lomba MTQ
+                Tingkat Ogan Komering Ilir. Kegiatan ini bertujuan untuk
+                meningkatkan kemampuan siswa dalam menghafal dan memahami
+                Al-Qur'an serta untuk meningkatkan rasa berlomba-lomba dalam
+                kebaikan.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card hover-effect fade-in">
+            <img src="berita/mtq.jpg" class="card-img-top" alt="Kegiatan MTQ" />
+            <div class="card-body">
+              <h3 class="card-title">
+                Keterlibatan dalam Lomba MTQ Tingkat Kabupaten Ogan Komering
+                Ilir
+              </h3>
+              <p class="text-muted">Tanggal: 26 Februari 2024</p>
+              <p class="card-text">
+                Yayasan Pesantren Darul Qur'an berpartisipasi dalam lomba MTQ
+                Tingkat Ogan Komering Ilir. Kegiatan ini bertujuan untuk
+                meningkatkan kemampuan siswa dalam menghafal dan memahami
+                Al-Qur'an serta untuk meningkatkan rasa berlomba-lomba dalam
+                kebaikan.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="news-item">
-        <img src="berita/mtq.jpg" alt="Kegiatan MTQ" />
-        <h3>
-          Keterlibatan dalam Lomba MTQ Tingkat kabupaten Ogan Komering Ilir
-        </h3>
-        <p>Tanggal: 26 Februari 2024</p>
-        <p>
-          Yayasan Pesantren Darul Qur'an berpartisipasi dalam lomba MTQ Tingkat
-          Ogan Komering Ilir. Kegiatan ini bertujuan untuk meningkatkan
-          kemampuan siswa dalam menghafal dan memahami Al-Qur'an serta untuk
-          meningkatkan rasa berlomba-lomba dalam kebaikan.
-        </p>
-      </div>
-      <div class="news-item">
-        <img src="berita/ziarah.jpg" alt="Kegiatan Ziarah" />
-        <h3>Kegiatan Ziarah Tahun 2023</h3>
-        <p>Tanggal: 29 Oktober 2023</p>
-        <p>
-          Yayasan Pesantren Darul Qur'an mengadakan kegiatan ziarah pada tanggal
-          29 Oktober 2023. Kegiatan ini bertujuan untuk meningkatkan kesadaran
-          dan keimanan siswa terhadap agama Islam serta untuk mempereratkan
-          silaturahmi antar siswa dan guru.
-        </p>
+        <div class="col-md-4 mb-4">
+          <div class="card hover-effect fade-in">
+            <img
+              src="berita/ziarah.jpg"
+              class="card-img-top"
+              alt="Kegiatan Ziarah"
+            />
+            <div class="card-body">
+              <h3 class="card-title">Kegiatan Ziarah Tahun 2023</h3>
+              <p class="text-muted">Tanggal: 29 Oktober 2023</p>
+              <p class="card-text">
+                Yayasan Pesantren Darul Qur'an mengadakan kegiatan ziarah pada
+                tanggal 29 Oktober 2023. Kegiatan ini bertujuan untuk
+                meningkatkan kesadaran dan keimanan siswa terhadap agama Islam
+                serta untuk mempereratkan silaturahmi antar siswa dan guru.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <br>
+    <br />
     <footer class="footer">
       <div class="footer-container">
         <div class="footer-info">
@@ -90,21 +172,19 @@
           </p>
           <p class="footer-text"><strong>Telepon:</strong> +62 813-2512-3377</p>
           <p class="footer-text">
-            <strong>Alamat:</strong> Blok B, Sumber
-          Hidup, Kec. Pedamaran Tim., Kabupaten Ogan Komering Ilir, Sumatera
-          Selatan 30672
-        </p>
+            <strong>Alamat:</strong> Blok B, Sumber Hidup, Kec. Pedamaran Tim.,
+            Kabupaten Ogan Komering Ilir, Sumatera Selatan 30672
           </p>
         </div>
         <div class="footer-social">
           <h3 class="footer-title">Ikuti Kami</h3>
           <div class="social-icons">
-            <a href="https://facebook.com" target="_blank"
-              ><img src="facebook.png" alt="Facebook" class="social-icon"
-            /></a>
-            <a href="https://instagram.com" target="_blank"
-              ><img src="instagram.png" alt="Instagram" class="social-icon"
-            /></a>
+            <a href="https://facebook.com" target="_blank">
+              <img src="facebook.png" alt="Facebook" class="social-icon" />
+            </a>
+            <a href="https://instagram.com" target="_blank">
+              <img src="instagram.png" alt="Instagram" class="social-icon" />
+            </a>
           </div>
         </div>
       </div>
@@ -113,6 +193,8 @@
       </p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
